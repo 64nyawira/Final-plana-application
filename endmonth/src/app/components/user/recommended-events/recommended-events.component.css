@@ -1,0 +1,76 @@
+.recommended-container {
+    margin-top: 20px;
+    text-align: center;
+    width: 80vw;
+    
+    margin-left: 19%;
+    color:#ffde00;
+    overflow: hidden; /* Ensure content doesn't overflow */
+  }
+  
+  .line {
+    display: flex;
+    
+    overflow: hidden; /* Hide overflow from animated elements */
+    width: 200%; /* Double the width to ensure continuous scrolling */
+    animation-duration: 20s; /* Adjust animation duration as needed */
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .line1, .line2 {
+    width: 100%; /* Each line takes 100% of parent width */
+  }
+  
+  .line1 {
+    animation: scrollLeftToRight 20s linear infinite;
+  }
+  
+  .line2 {
+    animation: scrollRightToLeft 20s linear infinite;
+  }
+  
+  .event {
+    display: inline-block;
+    margin: 0 10px;
+    flex: 0 0 auto;
+    color: aliceblue;
+    width: 170px;
+    height: 200px;
+    background: #1b1730;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left;
+    
+    font-size: 12px;
+    cursor: pointer;
+    white-space: normal; /* Ensure text wraps within .event */
+  }
+  
+  .event:hover {
+    transform: translateY(-5px);
+  }
+  
+  .event img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .event-details {
+   padding: 5px;
+  }
+  
+  @keyframes scrollLeftToRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  @keyframes scrollRightToLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+  }
+  

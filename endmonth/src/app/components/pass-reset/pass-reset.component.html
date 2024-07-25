@@ -1,0 +1,58 @@
+<div class="main">
+  <div class="container">
+    <h3>Reset Password</h3>
+    <form #resetPasswordForm="ngForm" (ngSubmit)="resetPassword(resetPasswordForm)">
+      <div *ngIf="message" style="font-size:12px;margin-bottom:6px;" [ngStyle]="{'color': message.includes('Failed') ? 'red' : 'green'}">
+        {{ message }}
+      </div>
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        name="email"
+        ngModel
+        required
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+        #emailCtrl="ngModel"
+      />
+      <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)" style="font-size:12px;color:red;margin-bottom:6px;">
+        <div *ngIf="emailCtrl.errors?.['required']">Email is required.</div>
+        <div *ngIf="emailCtrl.errors?.['email']">Invalid email format.</div>
+      </div>
+
+      <label for="newPassword">New Password:</label>
+      <input
+        type="password"
+        name="newPassword"
+        ngModel
+        required
+        minlength="8"
+        [(ngModel)]="newPassword"
+        placeholder="Enter new password"
+        #newPasswordCtrl="ngModel"
+      />
+      <div *ngIf="newPasswordCtrl.invalid && (newPasswordCtrl.dirty || newPasswordCtrl.touched)" style="font-size:12px;color:red;margin-bottom:6px;">
+        <div *ngIf="newPasswordCtrl.errors?.['required']">Password is required.</div>
+        <div *ngIf="newPasswordCtrl.errors?.['minlength']">Password must be at least 8 characters long.</div>
+      </div>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input
+        type="password"
+        name="confirmPassword"
+        ngModel
+        required
+        [(ngModel)]="confirmPassword"
+        placeholder="Confirm new password"
+        #confirmPasswordCtrl="ngModel"
+      />
+      <div *ngIf="confirmPasswordCtrl.invalid && (confirmPasswordCtrl.dirty || confirmPasswordCtrl.touched)" style="font-size:12px;color:red;margin-bottom:6px;">
+        <div *ngIf="confirmPasswordCtrl.errors?.['required']">Confirmation is required.</div>
+        <div *ngIf="confirmPassword !== newPassword">Passwords must match.</div>
+      </div>
+
+      <button type="submit" [disabled]="resetPasswordForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

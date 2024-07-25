@@ -1,0 +1,39 @@
+<div class="main">
+
+  <div class="navbar">
+      
+      <div class="search-container">
+        <input type="text" placeholder="Search for event" class="search-input">
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <div class="profile-container" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5l4kOOelhN6RDt-nQTp-Dn854Ua2rh_O4AA&s" alt="Profile" class="profile-img" (click)="toggleProfileDropdown()">
+        <div class="profile-dropdown"  *ngIf="isProfileDropdownOpen">
+          <p> John Doe</p>
+          <p>john.doe&#64;example.com</p>
+          <p> johndoe</p>
+          <button routerLink="/edit" class="edit-profile-button">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+    
+  
+  </div>
+
+<!-- <div class="main">
+  <div class="navbar">
+    <div class="search-container" *ngIf="user">
+      <input type="text" placeholder="Search for event" class="search-input">
+      <i class="fas fa-search search-icon"></i>
+    </div>
+    <div class="profile-container" *ngIf="user">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5l4kOOelhN6RDt-nQTp-Dn854Ua2rh_O4AA&s" alt="Profile" class="profile-img" (click)="toggleProfileDropdown()">
+      <div class="profile-dropdown" *ngIf="isProfileDropdownOpen">
+        <p>{{ user.name }}</p>
+        <p>{{ user.email }}</p>
+        <button routerLink="/edit" class="edit-profile-button">Edit Profile</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+

@@ -1,0 +1,14 @@
+<div class="carousel-container" *ngIf="events.length > 0">
+  <div
+    class="carousel-item"
+    *ngFor="let event of events; let i = index"
+    [ngClass]="getClass(i)"
+  >
+    <div class="event-background" [style.backgroundImage]="'url(' + event.image + ')'">
+      <div class="event-details">
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

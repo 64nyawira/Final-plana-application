@@ -1,0 +1,55 @@
+<div class="main">
+    
+    
+    <div class="navbar">
+        <div class="navbar-left">
+          <button routerLink="/" class="menu-item">Home</button>
+          <button  class="menu-item"><a href="#about">About Us</a></button>
+          <button class="menu-item"><a href="#foot">Contact</a></button>
+        </div>
+        <div class="navbar-right">
+          <button routerLink="/login" class="menu-item">Login</button>
+          <button routerLink="/register" class="menu-item">Get Started</button>
+        </div>
+      </div>
+
+
+        <div class="top">
+            <div class="text">
+                <p class="hash">#MusicFest</p>
+            <p class="unveil">Unveil ths Magic <br>
+                 of Soundscapes</p>
+            </div>
+
+            <div class="carousel">
+                <app-carousel></app-carousel>
+              </div>
+        </div>
+
+        <div class="about" id="about">
+          <h2>About Us</h2>
+          <p>Discover a world of rhythm and harmony with MusicFest! Our platform offers a seamless experience for music lovers to explore and book tickets for upcoming musical events. From intimate concerts to grand festivals, find events that match your taste and enjoy unforgettable live performances.</p>
+          <p>MusicFest is your gateway to a diverse range of musical genres and artists, bringing you closer to the music you love. Whether you're a fan of rock, jazz, classical, or electronic music, we have something for everyone. Our intuitive interface makes it easy to browse events, read about artists, and secure your tickets in just a few clicks.</p>
+          <p>Join our vibrant community of music enthusiasts and stay updated with the latest events and exclusive offers. At MusicFest, we believe that music has the power to bring people together and create lasting memories. Experience the thrill of live music and let us help you make every moment count.</p>
+        </div>
+        
+        <div class="events">
+          <app-recommended-events></app-recommended-events>
+        </div>
+       
+    
+
+       
+
+          <!-- <div class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <app-recommended></app-upcoming-events>
+          </div> -->
+
+      <div class="foot" id="foot">
+        
+        <app-footer></app-footer>
+      </div>
+      
+</div>
+

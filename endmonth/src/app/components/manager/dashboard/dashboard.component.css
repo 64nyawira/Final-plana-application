@@ -1,0 +1,232 @@
+/* Main container styles */
+.main {
+  padding: 20px;
+  background-color: #100d1e;
+}
+.branding {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: -30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background-color:transparent;
+  color: #ffde00;
+  font-weight: bold;
+  border: 2px solid #ffde00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+
+.text .main-text {
+  font-size: 18px;
+  color: #ffde00;
+}
+
+.text .sub-text {
+  font-size: 12px;
+  color:aliceblue;
+  margin-top: -4px;
+  
+}
+
+
+/* Navigation styles */
+.nav {
+  margin-bottom: 20px;
+}
+
+/* Menu item styles */
+.menu-item {
+  background-color: #100d1e;
+  color: #ffde00;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 5px 9px rgba(16, 13, 30, 0.9), 0 6px 20px rgba(16, 13, 30, 0.19);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(255, 222, 0, 0.2), 0 6px 20px rgba(255, 222, 0, 0.19);
+}
+
+/* Form container styles */
+.form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents the container from scrolling */
+}
+
+/* Form styles */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%; /* Limits the form height */
+  overflow-y: auto; /* Enables vertical scroll if content exceeds max height */
+}
+
+form h2 {
+  margin-top: 0;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.bttns {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Button styles */
+form button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+form button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Table styles */
+table {
+  color: rgb(204, 202, 202);
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background-color: #1b1730;
+  border-radius: 7px;
+}
+
+h2 {
+  text-align: center;
+  color: aliceblue;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  color: #ffde00;
+}
+
+table tr {
+  background-color: #1b1730;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+table button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+table button i {
+  font-size: 18px;
+}
+
+table button i.fa-edit {
+  color: #007bff;
+}
+
+table button i.fa-trash {
+  color: #dc3545;
+}
+
+/* Delete confirmation styles */
+.delete-confirmation {
+  position: fixed;
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 20px;
+  background-color: aliceblue;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.delete-confirmation p {
+  margin: 0 0 10px;
+}
+
+.delete-confirmation button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.delete-confirmation button:first-of-type {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-confirmation button:last-of-type {
+  background-color: #28a745;
+  color: white;
+}

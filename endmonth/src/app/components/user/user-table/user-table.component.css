@@ -1,0 +1,127 @@
+.main {
+    padding: 20px;
+    height: 100vh;
+    background-color: #100d1e;
+  }
+.users-table {
+    color: gray;
+    width: 80%;
+    margin-left: 10%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background-color: #1b1730;
+    border-radius: 7px;
+  }
+  
+  .users-table h2 {
+    text-align: center;
+    color: aliceblue;
+  }
+  
+  .users-table table th,
+  .users-table table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .users-table table th {
+    color: #ffde00;
+  }
+  
+  .users-table table tr {
+    background-color: #1b1730;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .users-table table img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .users-table table button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .users-table table button i {
+    font-size: 18px;
+  }
+  i{
+    color: #ffde00;
+  }
+  
+  
+  .nav {
+    margin-bottom: 20px;
+  }
+  .menu-item {
+    background-color: #100d1e;
+    color: #ffde00;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 5px 9px rgba(16, 13, 30, 0.9), 0 6px 20px rgba(16, 13, 30, 0.19);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(255, 222, 0, 0.2), 0 6px 20px rgba(255, 222, 0, 0.19);
+  }
+  .notification-form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .notification-form {
+    background-color: #1b1730;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ddd;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .notification-form h3 {
+    color: #ffde00;
+  }
+  
+  .notification-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .notification-form button {
+    background-color: #ffde00;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .notification-form button:hover {
+    background-color: #e6c700;
+  }
+  
+
+  
+  

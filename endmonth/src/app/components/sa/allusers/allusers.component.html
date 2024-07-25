@@ -1,0 +1,50 @@
+<div class="main">
+  <app-navbar></app-navbar>
+  <button routerLink="" class="menu-item">Home</button>
+  <button routerLink="/events" class="menu-item">Events</button>
+  <button class="menu-item">Analytics</button>
+
+  <div class="table-container">
+    <h2>Users</h2>
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <select [(ngModel)]="user.role" (change)="onRoleChange(user)">
+              <option value="manager">Manager</option>
+              <option value="attendee">Attendee</option>
+            </select>
+          </td>
+          <td>
+            <button class="delete-btn" (click)="confirmDelete(user)">
+              <i class="fa fa-trash"></i>
+            </button>
+            <button class="notify-btn">
+              <i class="fa fa-bell"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal" *ngIf="isDeleteConfirmationVisible">
+    <div class="modal-content">
+      <p>Are you sure you want to delete this user?</p>
+      <div class="modal-buttons">
+        <button class="confirm-btn" (click)="deleteConfirmed()">Yes</button>
+        <button class="cancel-btn" (click)="cancelDelete()">No</button>
+      </div>
+    </div>
+  </div>
+</div>

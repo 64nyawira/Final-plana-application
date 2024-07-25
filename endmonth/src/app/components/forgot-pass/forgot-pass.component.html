@@ -1,0 +1,56 @@
+<!-- <div class="main">
+  <div class="container">
+    <h3>Forgot Password</h3>
+    <form #forgotPassForm="ngForm" (ngSubmit)="enterEmail()">
+      <div *ngIf="message" style="font-size:12px;margin-bottom:6px;" [ngStyle]="{'color': message.includes('Failed') ? 'red' : 'green'}">
+        {{ message }}
+      </div>
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        #email="ngModel"
+        required
+        ngModel
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+      />
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" style="font-size:12px;color:red;margin-bottom:6px;">
+        <div *ngIf="email.hasError('required')">
+          Email is required
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="forgotPassForm.invalid">Submit</button>
+    </form>
+  </div>
+</div> -->
+<!-- <div class="main">
+  <h3>Forgot Password</h3>
+<form (ngSubmit)="enterEmail(f)" #f="ngForm">
+  <label for="email">Email:</label>
+  <input type="email" name="email" ngModel>
+  <button type="submit">Submit</button>
+</form>
+</div> -->
+
+
+
+<div class="main">
+  <h3>Forgot Password</h3>
+    <div class="container">
+      <form (ngSubmit)="enterEmail(f)" #f="ngForm">
+        <label for="email">Email:</label>
+        <input type="email" name="email" ngModel required #email="ngModel">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+          <div *ngIf="email.errors?.['required']">Email is required.</div>
+          <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+        </div>
+        <button type="submit" [disabled]="f.invalid">Submit</button>
+      </form>
+    </div>
+</div>
+
+
+

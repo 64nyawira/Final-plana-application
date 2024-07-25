@@ -1,0 +1,69 @@
+.main {
+  background-color: #100d1e;
+  margin-top: -3.1vh;
+  display: flex;
+}
+
+.table-container {
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+  color: rgb(204, 197, 197);
+  width: 60%;
+  margin-left: 10%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background-color: #1b1730;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-container h2 {
+  text-align: center;
+  color: aliceblue;
+}
+
+.bookings-table {
+  width: 100%;
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.bookings-table th {
+  color: #ffde00;
+}
+
+.bookings-table tbody tr {
+  background-color: #1b1730;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bookings-table tbody tr:hover {
+  background-color: #302c4e; /* Hover effect for rows */
+}
+
+.bookings-table button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.cancel {
+  background: #660066;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.delete {
+  background: #ff0000;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+ button:hover {
+  opacity: 0.8; 
+}

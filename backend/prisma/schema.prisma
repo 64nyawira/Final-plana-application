@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String      @id @default(uuid())
+  name             String
+  email            String   @unique
+  password         String
+  role             String?
+  resetCode        String?   
+  resetCodeExpiry  DateTime?
+  events           Event[]   @relation("ManagedEvents")
+  bookings         Booking[]
+  permissions      UserPermission[] @relation("UserPermissions")
+}
+
+model Event {
+  id          String      @id @default(uuid())
+  title       String
+  image       String
+  description String
+  date        DateTime    @default(now())
+  time        String
+  location    String
+  ticketTypes String ?
+  no_tickets  Int
+  peoplePerTicket Int?
+  pricing      Int?
+  groupPrice   Int?
+  managerId   String
+  manager     User     @relation("ManagedEvents", fields: [managerId], references: [id])
+  bookings    Booking[]
+  status      String
+}
+
+model Booking {
+  id          String      @id @default(uuid())
+  userId      String
+  eventId     String
+  ticketType  String
+  howmany     Int
+  statu       String
+  bookingDate DateTime
+  user        User     @relation(fields: [userId], references: [id], onUpdate: NoAction, onDelete: NoAction)
+  event       Event    @relation(fields: [eventId], references: [id], onUpdate: NoAction, onDelete: NoAction)
+}
+
+model Permission {
+  id          String   @id @default(uuid())
+  name        String
+  users       UserPermission[]
+}
+
+model UserPermission {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation("UserPermissions", fields: [userId], references: [id], onDelete: Cascade)
+  permissionId String
+  permission  Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+}

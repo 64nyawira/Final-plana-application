@@ -1,0 +1,41 @@
+<div class="main">
+  <div class="container">
+    <h3>Enter Reset Code</h3>
+    <form #enterCodeForm="ngForm" (ngSubmit)="enterCode(enterCodeForm)">
+      <div *ngIf="message" style="font-size:12px;margin-bottom:6px;" [ngStyle]="{'color': message.includes('Failed') ? 'red' : 'green'}">
+        {{ message }}
+      </div>
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        name="email"
+        ngModel
+        required
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+        #emailCtrl="ngModel"
+      />
+      <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)" style="font-size:12px;color:red;margin-bottom:6px;">
+        <div *ngIf="emailCtrl.errors?.['required']">Email is required.</div>
+        <div *ngIf="emailCtrl.errors?.['email']">Invalid email format.</div>
+      </div>
+
+      <label for="resetCode">Reset Code:</label>
+      <input
+        type="text"
+        name="resetCode"
+        ngModel
+        required
+        [(ngModel)]="resetCode"
+        placeholder="Enter reset code"
+        #resetCodeCtrl="ngModel"
+      />
+      <div *ngIf="resetCodeCtrl.invalid && (resetCodeCtrl.dirty || resetCodeCtrl.touched)" style="font-size:12px;color:red;margin-bottom:6px;">
+        <div *ngIf="resetCodeCtrl.errors?.['required']">Reset code is required.</div>
+      </div>
+
+      <button type="submit" [disabled]="enterCodeForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

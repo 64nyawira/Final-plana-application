@@ -1,0 +1,25 @@
+<div class="recommended-container">
+  <h2>Recommended for You</h2>
+  <div class="line line1">
+    <div class="event" *ngFor="let event of events" (click)="viewEvent(event.id)">
+      <img [src]="event.image" alt="{{ event.title }}" />
+      <div class="event-details">
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+        <p>{{ event.pricing | currency }}</p>
+        <p><strong>Where:</strong> {{ event.location }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="line line2">
+    <div class="event" *ngFor="let event of events" (click)="viewEvent(event.id)">
+      <img [src]="event.image" alt="{{ event.title }}" />
+      <div class="event-details">
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+        <p>{{ event.pricing | currency }}</p>
+        <p><strong>Where:</strong> {{ event.location }}</p>
+      </div>
+    </div>
+  </div>
+</div>

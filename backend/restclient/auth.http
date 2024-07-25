@@ -1,0 +1,98 @@
+
+
+### User Registration
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+  "name": "Nyawira cee",
+  "email": "charitynyawirairungu@gmail.com",
+  "password": "password1234",
+  "role": "attendee"
+}
+
+
+### User Login
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+  "email": "manager@gmail.com",
+  "password": "manager1234"
+}
+
+
+
+GET http://localhost:3000/user/user/:id
+Authorization: Bearer <your_token>
+
+
+### Get All Users
+GET http://localhost:3000/user/users
+Authorization: Bearer <your_token>
+
+### Delete User
+DELETE http://localhost:3000/user/user/1cc397a0-4b5a-418e-b732-549d099f8961
+Authorization: Bearer <your_token>
+
+### Assign Attendee Role
+PUT http://localhost:3000/user/assign-attendee/9048a9b5-adb3-4179-bfaf-40113a9dd518
+Authorization: Bearer <your_token>
+
+
+### Get All Attendees
+GET http://localhost:3000/event/attendees
+Authorization: Bearer <your_token>
+
+### Get All Managers
+GET http://localhost:3000/event/managers
+Authorization: Bearer <your_token>
+
+
+### Forgot Password
+POST http://localhost:3000/user/forgot-password
+Content-Type: application/json
+
+{
+  "email": "charitynyawirairungu@gmail.com"
+}
+
+
+### Verify Reset Code
+POST http://localhost:3000/user/verify-reset-code
+Content-Type: application/json
+
+{
+  "email": "charitynyawirairungu@gmail.com",
+  "code": "735024"
+}
+
+
+
+### Reset Password
+POST http://localhost:3000/user/reset-password
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "newPassword": "NewPassword123!"
+}
+
+
+
+### Get All Bookings
+GET http://localhost:3000/user/bookings
+Authorization: Bearer <your_token>
+
+
+### Delete a Booking
+DELETE http://localhost:3000/user/delete/someid
+Authorization: Bearer <your_token>
+
+### Delete a Booking
+
+DELETE http://localhost:3000/user/delete/someid
+
+### Assign Manager Role
+PUT http://localhost:3000/user/assign-manager/a1171879-cd48-4d24-a6fe-7611784f9f40
+Authorization: Bearer <your_token>

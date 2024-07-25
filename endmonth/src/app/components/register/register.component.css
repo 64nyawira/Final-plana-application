@@ -1,0 +1,65 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aliceblue;
+    font-family: 'Arial', sans-serif;
+  }
+  h3{
+    text-align: center;
+    color: #100d1e;
+  }
+  .account{
+    display: flex;
+    gap: 6px;
+  }
+
+  .anchor{
+    color: blue;
+   
+    cursor: pointer;
+  }
+
+  .anchor:hover{
+    text-decoration: underline;
+  }
+  .container {
+    background-color: white;
+    font-size: 14px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Noticeable box-shadow */
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 6px;
+  }
+  
+  input, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+    
+  }
+  
+  button {
+    background-color: #100d1e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #5b3a0a; /* Darker shade for hover */
+  }
+  

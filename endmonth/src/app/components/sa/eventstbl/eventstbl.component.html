@@ -1,0 +1,56 @@
+<div class="main">
+   
+    <!-- <app-navbar></app-navbar> -->
+
+    <button routerLink="" class="menu-item">home</button>
+  <button routerLink="/sa" class="menu-item">users</button>
+  <button class="menu-item" >analytics</button>
+
+<div class="table-container">
+    <h2>Events</h2>
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events">
+          <td>{{ event.title }}</td>
+          <td><img style="height: 50px;width: 50px;" [src]="event.image" alt="{{ event.title }}" /></td>
+          <td>{{event.date}}</td>
+          <td>{{event.time}}</td>
+          <td>{{ event.pricing }}</td>
+          <td>
+            <button class="approve-btn" (click)="approveEvent(event.id)">
+              Approve
+            </button>
+            <button class="disapprove-btn" (click)="disapproveEvent(event.id)">
+              Disapprove
+            </button>
+            <button class="notify-btn" (click)="showNotifyForm(event.id)">
+              Notify
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal" *ngIf="isNotifyFormVisible">
+    <div class="modal-content">
+      <h3 style="color: aliceblue;">Send Notification</h3>
+      <textarea [(ngModel)]="notificationMessage" rows="4" cols="50" placeholder="Write your message here..."></textarea>
+      <div class="modal-buttons">
+        <button style="border: none;" class="confirm-btn" (click)="sendNotification()">Send</button>
+        <button style="border: none;" class="cancel-btn" (click)="hideNotifyForm()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+

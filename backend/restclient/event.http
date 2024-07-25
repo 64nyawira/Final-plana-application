@@ -1,0 +1,83 @@
+### Create Event
+POST http://localhost:3000/event/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhMTE3MTg3OS1jZDQ4LTRkMjQtYTZmZS03NjExNzg0ZjlmNDAiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTcyMTgwOTMwNSwiZXhwIjoxNzIxODEyOTA1fQ.nuoCdkTa7TaJcU3f-M_moIvQiYo1UNmc7dfOty6NHUo
+
+{
+  "title": "Summer hype",
+  "description": "Rammaor summer hype",
+  "image": "Vista traseira de um grande grupo de espectadores se divertindo no festival de música à noite Soe deles está tirando fotos com telefones inteligentes Copiar espaço _ Foto Premium.jpeg",
+  "date": "2024-07-16T12:00:00.000Z",
+  "time": "2024-07-16T14:00:00.000Z",
+  "location": "Location",
+  "ticketTypes": "Singles",
+  "peoplePerTicket": 4,
+  "groupPrice": 600,
+  "no_tickets": 2,
+  "managerId": "a1171879-cd48-4d24-a6fe-7611784f9f40"
+}
+
+
+### Book Ticket
+
+POST http://localhost:3000/event/book-ticket
+Content-Type: application/json
+{
+  "userId": "9048a9b5-adb3-4179-bfaf-40113a9dd518",
+  "eventId": "b6e71091-69db-4951-a242-056928ae3fda",
+  "ticketType": "single",
+  "howmany": 2
+}
+
+
+
+### Get All Events
+
+GET http://localhost:3000/event/all
+
+
+###Get Event by ID
+
+GET http://localhost:3000/event/getone/efec70df-e1ed-426b-8030-db29cdc84b60
+
+
+###Update Event
+
+PUT http://localhost:3000/event/update/efec70df-e1ed-426b-8030-db29cdc84b60
+Content-Type: application/json
+
+{
+  "title": "Updated Event"
+}
+
+### Delete Event
+
+DELETE http://localhost:3000/event/delete/efec70df-e1ed-426b-8030-db29cdc84b60
+
+###Approve Event
+
+PUT http://localhost:3000/event/approve/efec70df-e1ed-426b-8030-db29cdc84b60
+
+
+###Disapprove Event
+
+PUT http://localhost:3000/event/disapprove/efec70df-e1ed-426b-8030-db29cdc84b60
+
+
+###et approved events for a manager
+
+GET http://localhost:3000/event/approved/3e0764cb-37c6-4fe9-996b-dbabebf3e870
+Authorization: Bearer <Your_Token>
+
+
+###Get dissaproved events
+
+GET http://localhost:3000/event/pending/3e0764cb-37c6-4fe9-996b-dbabebf3e870
+Authorization: Bearer <Your_Token>
+
+
+###Get pending events
+
+GET http://localhost:3000/event/pending/3e0764cb-37c6-4fe9-996b-dbabebf3e870
+Authorization: Bearer <Your_Token>
+

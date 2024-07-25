@@ -1,0 +1,141 @@
+.main {
+  padding: 20px;
+  background-color: #100d1e;
+  height: 100vh;
+}
+
+.nav {
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  background-color: #100d1e;
+  color: #ffde00;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 5px 9px rgba(16, 13, 30, 0.9), 0 6px 20px rgba(16, 13, 30, 0.19);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(255, 222, 0, 0.2), 0 6px 20px rgba(255, 222, 0, 0.19);
+}
+
+
+.table-container {
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+  color: rgb(204, 197, 197);
+  width: 80%;
+  margin-left: 10%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background-color: #1b1730;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-container h2 {
+  text-align: center;
+  color: aliceblue;
+}
+
+.users-table {
+  width: 100%;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.users-table th {
+  color: #ffde00;
+  background-color: #1b1730; /* Ensure header background matches table background */
+}
+
+.users-table tbody tr {
+  background-color: #1b1730;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.users-table tbody tr:hover {
+  background-color: #302c4e; /* Darken background on hover */
+}
+
+.users-table img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%; /* Ensure images are round */
+}
+
+.users-table button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.users-table button.approve-btn {
+  background-color: #00cc66;
+}
+
+.users-table button.disapprove-btn {
+  background-color: #ff0000;
+}
+
+.users-table button.notify-btn {
+  background-color: #0066ff;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #1b1730;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-buttons button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button.confirm-btn {
+  background-color: #ff0000;
+}
+
+.modal-buttons button.cancel-btn {
+  background-color: #0066ff;
+}
+
+  

@@ -1,0 +1,37 @@
+<div class="main">
+  <app-sidebar></app-sidebar>
+  <div class="table-container">
+    <h2>Bookings</h2>
+    <table class="bookings-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Tickets</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.event?.title || 'N/A' }}</td>
+          <td>{{ booking.howmany }}</td>
+          <td>
+            {{ booking.ticketType === 'group' 
+                ? booking.howmany * (booking.event?.groupPrice || 0) 
+                : booking.howmany * (booking.event?.pricing || 0) 
+            }}
+          </td>
+          <td>{{ booking.bookingDate | date:'short' }}</td>
+          <td>{{ booking.statu }}</td>
+          <td>
+            <button style="background: #660066; padding: 5px 10px; border-radius: 5px;" class="cancel" (click)="cancelBooking(booking)">Cancel</button>
+            <button style="background: #ff0000; padding: 5px 10px; border-radius: 5px;" class="delete" (click)="deleteBooking(booking)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,43 @@
+<div class="main">
+  <div class="nav">
+    <app-navbar></app-navbar>
+  </div>
+  <button routerLink="" class="menu-item">Home</button>
+  <button routerLink="/manager" class="menu-item">Events</button>
+
+  <div class="users-table">
+    <h2>Users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Location</th>
+          <th>Phone Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td></td>
+          <td></td>
+          <td>
+            <button (click)="showNotificationForm(user)">
+              <i class="fas fa-bell"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="selectedUser" class="notification-form-container">
+    <div class="notification-form">
+      <h3>Notify {{ selectedUser.username }}</h3>
+      <textarea [(ngModel)]="notificationMessage" placeholder="Write your message here..."></textarea>
+      <button (click)="sendNotification()">Send Notification</button>
+      <button (click)="cancelNotification()">Cancel</button>
+    </div>
+  </div>
+</div>
